@@ -184,6 +184,9 @@ function _dotnet_bash_complete() {
 
 complete -f -F _dotnet_bash_complete dotnet
 
+# Godot
+alias godot='$GODOT_PATH'
+
 # git
 alias gp='git pull'
 alias gs='git status'
