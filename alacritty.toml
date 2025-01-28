@@ -1,0 +1,23 @@
+[font]
+size = 17
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+decorations = "none"
+startup_mode = "Fullscreen"
+
+[window.padding]
+x = 7
+y = 0
+
+[general]
+
+# themes from https://github.com/alacritty/alacritty-theme
+import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+
+[terminal]
+
+[terminal.shell]
+program = "tmux"
