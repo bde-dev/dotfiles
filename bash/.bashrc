@@ -16,7 +16,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # config
-export BROWSER="firefox"
+export BROWSER="google-chrome"
 
 # directories
 export REPOS="$HOME/dev/repos"
@@ -36,6 +36,9 @@ export GOPATH="$HOME/go/"
 
 # dotnet
 export DOTNET_ROOT="$HOME/dotnet"
+
+# Godot
+export GODOT_PATH=~/Downloads/Godot_v4.3-stable_mono_linux_x86_64/Godot_v4.3-stable_mono_linux.x86_64
 
 # get rid of mail notifications on MacOS
 unset MAILCHECK
