@@ -80,14 +80,13 @@ ln -sf "$PWD/bash/.bashrc" "$HOME"/.bashrc
 # Zettelkasten
 # This one's a little tricky on MacOS because the path contains a space. It needs to be stored as an array,
 # and when called it needs to be quoted.
-export ZETTELKASTEN=("~/dev/Notes-vault")
+export ZETTELKASTEN=~/dev/Notes-vault
 ln -sf "$ZETTELKASTEN" ~/Zettelkasten
 
 # Packages
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 
 # Show dotfiles bashrc and source it into script context
 cat ~/.bashrc
