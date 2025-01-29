@@ -23,7 +23,7 @@ export REPOS="$HOME/dev/repos"
 export GITUSER="bde-dev"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
-export LAB="$GHREPOS/lab"
+export LAB="$GHREPOS/homelab"
 export SCRIPTS="$DOTFILES/scripts"
 export ICLOUD="$HOME/icloud"
 export ZETTELKASTEN="$HOME/Zettelkasten"
@@ -62,17 +62,24 @@ export HISTCONTROL=ignorespace
 
 clone() {
   local repo="$1" user
+  echo "captured repo: $repo"
   local repo="${repo#https://github.com/}"
+  echo "repo: $repo"
   local repo="${repo#git@github.com:}"
+  echo "repo: $repo"
   if [[ $repo =~ / ]]; then
     user="${repo%%/*}"
   else
     user="$GITUSER"
     [[ -z "$user" ]] && user="$USER"
   fi
+  echo "user: $user"
   local name="${repo##*/}"
+  echo "name: $name"
   local userd="$REPOS/github.com/$user"
+  echo "userd: $userd"
   local path="$userd/$name"
+  echo "path: $path"
   [[ -d "$path" ]] && cd "$path" && return
   mkdir -p "$userd"
   cd "$userd"

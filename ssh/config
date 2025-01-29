@@ -22,6 +22,29 @@
 # scp C:\dev\tcs\new-gfl-installer.tar $IPADDRESS
 
 
+##################################
+########### SSH KEYS #############
+##################################
+
+#Host github-personal
+#  HostName github.com
+#  User git
+#  IdentityFile ~/.ssh/personal-github
+
+#Host github-tcs
+#  HostName github.com
+#  User git
+#  IdentityFile ~/.ssh/tcs-github
+
+#Host bitbucket-tcs
+#  HostName bitbucket.org
+#  User git
+#  IdentityFile ~/.ssh/tcs-bitbucket
+
+
+
+
+
 
 ##################################
 ######## INFRASTRUCTURE ##########
