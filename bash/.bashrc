@@ -125,6 +125,9 @@ alias scripts='cd $SCRIPTS'
 alias cdblog="cd ~/websites/blog"
 alias cdpblog='cd $ZETTELKASTEN/2-areas/blog/content'
 
+# ssh
+alias sshc='v $HOME/.ssh/config'
+
 # Repos
 
 alias lab='cd $LAB'
