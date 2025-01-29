@@ -103,7 +103,7 @@ cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 sudo add-apt-repository ppa:aslatter/ppa -y
 
 # ubuntu packages apt
-sudo apt install ripgrep gh fd-find
+sudo apt install ripgrep gh fd-find hugo
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
