@@ -55,6 +55,7 @@ common_items=(
   "hypr/hyprland.conf:$XDG_CONFIG_HOME/hypr/hyprland.conf"
   "hypr/hypridle.conf:$XDG_CONFIG_HOME/hypr/hypridle.conf"
   "hypr/hyprlock.conf:$XDG_CONFIG_HOME/hypr/hyprlock.conf"
+  "ssh/config:$HOME/.ssh/config"
 )
 
 create_directories "${common_directories[@]}"

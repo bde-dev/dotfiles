@@ -1,0 +1,345 @@
+#####################################
+## WINDOWS SSH-COPY-ID ALTERNATIVE ##
+#####################################
+
+# Open target ssh keys file:
+# sudo vim ~/.ssh/authorized_keys
+
+# Get ssh key from powershell:
+# Get-Content "C:\Users\brad evans\.ssh\id_rsa.pub" | Clip
+
+# Then paste from clipboard to target host window
+
+
+
+# Do system updates on a new build
+# sudo apt update && sudo apt upgrade -y && sudo apt install vim openssh-server qemu-guest-agent docker.io -y && sudo apt autoremove -y && sudo shutdown now
+
+# Do system updates on a new build and install ansible
+# sudo apt update && sudo apt upgrade -y && sudo apt install vim qemu-guest-agent ansible -y && sudo apt autoremove -y && sudo shutdown now
+
+# Upload gfl installer
+# scp C:\dev\tcs\new-gfl-installer.tar $IPADDRESS
+
+
+
+##################################
+######## INFRASTRUCTURE ##########
+##################################
+
+# Proxmox
+
+Host global-storage
+	HostName 192.168.252.240
+	User root
+
+Host innos-proxmox-node01
+	HostName 172.16.80.11
+	User root
+
+Host innos-proxmox-node02
+	HostName 172.16.80.12
+	User root
+	
+Host innos-proxmox-node03
+	HostName 172.16.80.13
+	User root
+
+Host innos-proxmox-node04
+	HostName 172.16.80.14
+	User root
+
+Host innos-proxmox-node05
+	HostName 172.16.80.15
+	User root
+
+
+# Show kit
+
+Host show-storage
+	HostName 192.168.252.165
+	User tcs
+
+Host show-server01
+	HostName 192.168.252.160
+	User tcs
+
+
+
+# CI/CD
+
+Host jenkins
+	HostName 172.16.254.220
+	User tcs
+
+Host wazuh
+	HostName 172.16.6.41
+	User tcs
+	
+
+# Misc
+
+Host postgres1
+	HostName 192.168.252.80
+	User tcs
+
+Host postgres2
+	HostName 192.168.252.54
+	User tcs
+
+Host postgres3
+	HostName 192.168.252.100
+	User tcs
+
+Host postgres4
+	HostName 192.168.252.157
+	User tcs
+
+Host swarmtests
+	HostName 192.168.252.66
+	User tcs
+
+Host messaging-server
+	HostName 192.168.252.112
+	User tcs
+
+
+# k8s
+
+Host ansible
+	HostName 192.168.252.122
+	User tcs
+
+Host argo
+	HostName 192.168.252.73
+	User tcs
+
+Host rancher
+	HostName 192.168.252.111
+	User tcs
+
+Host k8s-server
+	HostName 192.168.252.81
+	User tcs
+
+Host k8s-client
+	HostName 192.168.252.89
+	User tcs
+
+
+# Observability
+Host telemetry-server
+	HostName 172.16.81.1
+	User tcs
+
+
+##################################
+############### Q2 ###############
+##################################
+
+Host q2-innos-server
+	HostName 192.168.252.173
+	User tcs
+
+Host q2-parimax-server
+	HostName 192.168.252.182
+	User tcs
+
+Host q2-innos-term1
+	HostName 192.168.252.92
+	User quixant
+
+Host q2-innos-rnghost
+	HostName 172.16.80.60
+	User tcs
+
+Host q2-york-rnghost
+	HostName 192.168.252.162
+	User tcs
+
+Host q2-stoke-rnghost
+	HostName 192.168.252.179
+	User tcs
+
+Host q2-showroom-server
+	HostName 192.168.252.12
+	User tcs
+
+
+Host q2-telemetry-server
+	HostName 172.16.81.10
+	User tcs
+
+Host q2-observability-rnghost
+	HostName 172.16.81.20
+	User tcs
+
+Host q2-observability-terminal
+	HostName 172.16.81.30
+	User tcs
+
+Host q2-observability-table
+	HostName 172.16.81.40
+	User tcs
+
+
+
+##################################
+############### GFL ##############
+##################################
+	
+Host showroom
+	HostName 192.168.252.1
+	User tcs
+
+
+
+Host venetian-appserver
+	HostName 172.16.85.100
+	User tcs
+	
+Host venetian-dbserver
+	HostName 172.16.85.101
+	User tcs
+	
+Host venetian-dbreplication01
+	HostName 172.16.85.102
+	User tcs
+
+Host venetian-dbreplication02
+	HostName 172.16.85.103
+	User tcs
+
+	
+Host canada1
+	HostName 192.168.252.55
+	User tcs
+
+Host canada2
+	HostName 192.168.252.174
+	User tcs
+	
+Host canada3
+	HostName 192.168.252.74
+	User tcs
+	
+Host canada-terminal
+	HostName 192.168.252.238
+	KexAlgorithms +diffie-hellman-group1-sha1
+	User root
+	
+Host canada-table
+	HostName 192.168.252.174
+	KexAlgorithms +diffie-hellman-group1-sha1
+	User root
+	
+
+
+
+##################################
+########### TIB RELATED ##########
+##################################
+
+# For going into a LAN port on the TIB
+Host tiblan
+	HostName 192.168.1.1
+	KexAlgorithms +diffie-hellman-group1-sha1
+	HostKeyAlgorithms +ssh-rsa
+    MACs +hmac-sha1
+	User root
+	
+# Generic TIB and server host names
+# Change these IP's for easier access
+Host tib
+	HostName 192.168.252.9
+	KexAlgorithms +diffie-hellman-group1-sha1
+	HostKeyAlgorithms +ssh-rsa
+    MACs +hmac-sha1
+	User root
+
+
+	
+	
+##################################
+############## US Q2 #############
+##################################
+
+Host us-server
+	HostName 192.168.182.200
+	User tcs
+
+Host us-ba01
+	HostName 192.168.182.204
+	User tcs
+
+Host us-ar01
+	HostName 192.168.182.205
+	User tcs
+
+Host us-rng
+	HostName 192.168.182.206
+	User tcs
+	
+Host us-term1
+	HostName 192.168.182.201
+	User quixant
+
+Host us-term2
+	HostName 192.168.182.202
+	User quixant
+
+Host us-term3
+	HostName 192.168.182.203
+	User quixant
+
+##################################
+########## BARCELONA Q2 ##########
+##################################
+
+Host barc-q2-server
+	HostName 192.168.252.200
+	User tcs
+
+Host barc-q2-roulette-xtra
+	HostName 192.168.252.201
+	User tcs
+
+Host barc-q2-roulette-highend
+	HostName 192.168.252.202
+	User tcs
+
+Host barc-q2-baccarat
+	HostName 192.168.252.203
+	User tcs
+	
+Host barc-q2-terminal01
+	HostName 192.168.252.204
+	User quixant
+
+Host barc-q2-terminal02
+	HostName 192.168.252.205
+	User quixant
+
+Host barc-q2-terminal03
+	HostName 192.168.252.206
+	User quixant
+
+Host barc-q2-terminal04
+	HostName 192.168.252.207
+	User quixant
+
+Host barc-q2-terminal05
+	HostName 192.168.252.208
+	User quixant
+
+Host barc-q2-terminal06
+	HostName 192.168.252.209
+	User quixant
+
+Host barc-q2-roulette-podium
+	HostName 192.168.252.211
+	User tcs
+
+Host barc-q2-sparetable02
+	HostName 192.168.252.212
+	User tcs
