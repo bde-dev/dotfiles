@@ -105,6 +105,9 @@ sudo add-apt-repository ppa:aslatter/ppa -y
 # ubuntu packages apt
 sudo apt install ripgrep gh fd-find hugo
 
+# python venv
+sudo apt install python3-venv
+
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
 
