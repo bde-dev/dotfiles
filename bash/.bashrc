@@ -25,28 +25,24 @@ export GITUSER="bde-dev"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/homelab"
-export SCRIPTS="$DOTFILES/scripts"
-export ICLOUD="$HOME/icloud"
-export ZETTELKASTEN="$HOME/Zettelkasten"
 
 # personal
 # export PGITUSER="bde-dev"
 # export PGHREPOS="$REPOS/github.com/$PGITUSER"
 #export DOTFILES="$PGHREPOS/dotfiles"
 #export LAB="$PGHREPOS/homelab"
-#export SCRIPTS="$DOTFILES/scripts"
-#export ICLOUD="$HOME/icloud"
-#export ZETTELKASTEN="$HOME/Zettelkasten"
+export SCRIPTS="$DOTFILES/scripts"
+export ICLOUD="$HOME/icloud"
+export ZETTELKASTEN="$HOME/Zettelkasten"
 
 # tcs
-# export TCSGITUSER="bd-evans"
-# export TCSREPOS="$REPOS/tcs"
-# export TCSGHREPOS="$TCSREPOS/github.com"
-# export TCSBBREPOS="$TCSREPOS/bitbucket.org"
-# export Q2="$TCSBBREPOS/qorex2"
-# export TCSCOMMS="$TCSBBREPOS/tcscomms"
-# export DDS="$TCSGHREPOS/WinningNumberDisplay"
-# export RLX="$TCSGHREPOS/RouletteXtra"
+export TCSGITUSER="bd-evans"
+export TCSGHREPOS="$REPOS/github.com/$TCSGITUSER"
+export TCSBBREPOS="$REPOS/bitbucket.org/$TCSGITUSER"
+export Q2="$TCSBBREPOS/qorex2"
+export TCSCOMMS="$TCSBBREPOS/tcscomms"
+export DDS="$TCSGHREPOS/WinningNumberDisplay"
+export RLX="$TCSGHREPOS/RouletteXtra"
 
 # Go related. In general all executables and scripts go in .local/bin
 export GOBIN="$HOME/.local/bin"
@@ -171,10 +167,10 @@ alias avm='cd $REPOS/github.com/Azure/bicep-registry-modules'
 alias d='cd $REPOS/delegate'
 
 # tcs
-# alias q2='cd $Q2'
-# alias tcscomms='cd $TCSCOMMS'
-# alias dds='cd $DDS'
-# alias rlx='cd $RLX'
+alias q2='cd $Q2'
+alias tcscomms='cd $TCSCOMMS'
+alias dds='cd $DDS'
+alias rlx='cd $RLX'
 
 alias c="clear"
 alias icloud="cd \$ICLOUD"
