@@ -105,9 +105,6 @@ sudo add-apt-repository ppa:aslatter/ppa -y
 # ubuntu packages apt
 sudo apt install ripgrep gh fd-find hugo
 
-# python venv
-sudo apt install python3-venv
-
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
 
@@ -119,6 +116,12 @@ brew install neovim go lazygit
 
 # ubuntu terminal and multiplexer setup
 sudo apt install alacritty tmux
+
+# python
+sudo apt install python3-venv pip
+curl https://pyenv.run | bash
+pyenv install 3.11.11 # required for nginx-language-server
+pyenv global 3.11.11
 
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.
