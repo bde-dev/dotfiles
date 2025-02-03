@@ -125,9 +125,9 @@ fi
 # ssh-add -q ~/.ssh/mischa
 # ssh-add -q ~/.ssh/mburg
 #{
-ssh-add -q ~/.ssh/id_ed25519
-ssh-add -q ~/.ssh/vanoord
-ssh-add -q ~/.ssh/delegate
+#ssh-add -q ~/.ssh/id_ed25519
+#ssh-add -q ~/.ssh/vanoord
+#ssh-add -q ~/.ssh/delegate
 #} &>/dev/null
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -275,8 +275,6 @@ alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}
 alias vf='v $(fp)'
 
 # sourcing
-source "$HOME/.privaterc"
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
   source "$HOME/.fzf.bash"
   # echo "I'm on Mac!"
@@ -292,15 +290,7 @@ else
   eval "$(fzf --bash)"
 fi
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/mischa/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
 # Only needed for npm install on WSL
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-source /Users/mischa/.bash_completions/update_metrics.py.sh
-
-source /Users/mischa/.bash_completions/typer.sh
