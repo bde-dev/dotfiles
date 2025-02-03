@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Script to install common tools
+
+# python
+sudo apt install python3-venv pip
+curl https://pyenv.run | bash
+pyenv install 3.11.11 # required for nginx-language-server
+pyenv global 3.11.11
+
+# Blog
+sudo apt install hugo
+
+# Kubernetes tools
+brew install fluxcd/tap/flux
+brew install siderolabs/tap/talosctl
+brew install cilium-cli
+curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && sudo install -c -m 0755 devpod /usr/local/bin && rm -f devpod
