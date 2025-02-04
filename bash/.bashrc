@@ -2,6 +2,13 @@
 # ~/.bashrc
 #
 
+# ~~~~~~~~ Bash Profiling ~~~~~~~~~~
+
+#PS4='+ $EPOCHREALTIME\011 '
+#timestamp=$(date +"%Y%m%d_%H%M%S")
+#exec 3>&2 2>/tmp/bashstart_${timestamp}_$$.log
+#set -x
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -254,7 +261,6 @@ complete -o default -F __start_kubectl k
 alias kgp='kubectl get pods'
 alias kc='kubectx'
 alias kn='kubens'
-
 alias kcs='kubectl config use-context admin@homelab-staging'
 alias kcp='kubectl config use-context admin@homelab-production'
 
@@ -266,7 +272,7 @@ alias fgk='flux get kustomizations'
 source <(talosctl completion bash)
 source <(kubectl-cnp completion bash)
 source <(cilium completion bash)
-source <(devpod completion bash)
+#source <(devpod completion bash)
 
 # fzf aliases
 # use fp to do a fzf search and preview the files
@@ -294,3 +300,16 @@ fi
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# ~~~~~~~~ Profiling ~~~~~~~~~
+
+#set +x
+#exec 2>&3 3>&-
+#
+#
+#START_TIME=$EPOCHREALTIME
+#END_TIME=$EPOCHREALTIME
+#ELAPSED_MS=$(printf "%.0f" $(echo "($END_TIME - $START_TIME) * 1000" | bc))
+#
+#
+#echo "Bash startup took $ELAPSED_MS ms"
