@@ -254,6 +254,10 @@ alias tp='terraform plan'
 # fun
 alias fishies=asciiquarium
 
+# Docker
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
 # kubectl
 alias k='kubectl'
 source <(kubectl completion bash)
