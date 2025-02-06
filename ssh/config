@@ -31,7 +31,7 @@ Host github.com
   User git
   IdentityFile ~/.ssh/tcs-laptop
 
-Host bitbucket-tcs
+Host bitbucket.org
   HostName bitbucket.org
   User git
   IdentityFile ~/.ssh/tcs-bitbucket
