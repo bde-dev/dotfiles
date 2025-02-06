@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to install common tools
+# Script to install common tools and applications
 
 # python
 sudo apt install python3-venv pip
