@@ -28,16 +28,14 @@ export BROWSER="google-chrome"
 # directories
 # common
 export REPOS="$HOME/dev/repos"
-export GITUSER="bde-dev"
-export GHREPOS="$REPOS/github.com/$GITUSER"
-export DOTFILES="$GHREPOS/dotfiles"
-export LAB="$GHREPOS/homelab"
+export GHREPOS="$REPOS/github.com"
+export BBREPOS="$REPOS/bitbucket.org"
 
 # personal
-# export PGITUSER="bde-dev"
-# export PGHREPOS="$REPOS/github.com/$PGITUSER"
-#export DOTFILES="$PGHREPOS/dotfiles"
-#export LAB="$PGHREPOS/homelab"
+export PGITUSER="bde-dev"
+export PGHREPOS="$REPOS/github.com/$PGITUSER"
+export DOTFILES="$PGHREPOS/dotfiles"
+export LAB="$PGHREPOS/homelab"
 export SCRIPTS="$DOTFILES/scripts"
 export ICLOUD="$HOME/icloud"
 export ZETTELKASTEN="$HOME/Zettelkasten"
@@ -53,7 +51,7 @@ export RLX="$TCSGHREPOS/RouletteXtra"
 
 # Go related. In general all executables and scripts go in .local/bin
 export GOBIN="$HOME/.local/bin"
-export GOPRIVATE="github.com/$GITUSER/*,gitlab.com/$GITUSER/*"
+export GOPRIVATE="github.com/$PGITUSER/*,gitlab.com/$PGITUSER/*"
 # export GOPATH="$HOME/.local/share/go"
 export GOPATH="$HOME/go/"
 
@@ -93,7 +91,7 @@ clone() {
   if [[ $repo =~ / ]]; then
     user="${repo%%/*}"
   else
-    user="$GITUSER"
+    user="$PGITUSER"
     [[ -z "$user" ]] && user="$USER"
   fi
   echo "user: $user"
@@ -159,21 +157,28 @@ alias cdpblog='cd $ZETTELKASTEN/2-areas/blog/content'
 alias sshc='v $HOME/.ssh/config'
 
 # Repos
+# common
+alias repos='cd $REPOS'
+alias ghrepos='cd $GHREPOS'
+alias bbrepos='cd $BBREPOS'
+
 # personal
 alias lab='cd $LAB'
 alias cks='cd $LAB/kubernetes/cks/'
 alias alab='cd $GHREPOS/azure-lab'
-alias dot='cd $GHREPOS/dotfiles'
+alias dot='cd $PGHREPOS/dotfiles'
 alias repos='cd $REPOS'
-alias ghrepos='cd $GHREPOS'
+alias pgh='cd $GHREPOS'
 alias cdgo='cd $GHREPOS/go/'
-alias ex='cd $REPOS/github.com/$GITUSER/go/Exercism/'
+alias ex='cd $REPOS/github.com/$PGITUSER/go/Exercism/'
 alias rwdot='cd $REPOS/github.com/rwxrob/dot'
 
 alias avm='cd $REPOS/github.com/Azure/bicep-registry-modules'
 alias d='cd $REPOS/delegate'
 
 # tcs
+alias tcsgh='cd $TCSGHREPOS'
+alias tcsbb='cd $TCSBBREPOS'
 alias q2='cd $Q2'
 alias tcscomms='cd $TCSCOMMS'
 alias dds='cd $DDS'
@@ -182,11 +187,11 @@ alias rlx='cd $RLX'
 alias c="clear"
 alias icloud="cd \$ICLOUD"
 alias rob='cd $REPOS/github.com/rwxrob'
-alias homelab='cd $REPOS/github.com/$GITUSER/homelab/'
+alias homelab='cd $REPOS/github.com/$PGITUSER/homelab/'
 alias hl='homelab'
-alias hlp='cd $REPOS/github.com/$GITUSER/homelab-private/'
-alias hlps='cd $REPOS/github.com/$GITUSER/homelab-private-staging/'
-alias hlpp='cd $REPOS/github.com/$GITUSER/homelab-private-production/'
+alias hlp='cd $REPOS/github.com/$PGITUSER/homelab-private/'
+alias hlps='cd $REPOS/github.com/$PGITUSER/homelab-private-staging/'
+alias hlpp='cd $REPOS/github.com/$PGITUSER/homelab-private-production/'
 alias cdq='cd $REPOS/github.com/jackyzha0/quartz'
 
 # ls
