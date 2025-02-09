@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Generate completions into files
+# Source those files in .bashrc
+# kubectl completion bash >> kubectl_bash_completion
+# flux completion bash >> flux_bash_completion
+# talosctl completion bash >> talosctl_bash_completion
+# kubectl-cnp completion bash >> kubectlcnp_bash_completion
+# cilium completion bash >> cilium_bash_completion
+# devpod completion bash >> kubectl_bash_completion
