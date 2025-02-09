@@ -103,7 +103,7 @@ cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 sudo add-apt-repository ppa:aslatter/ppa -y
 
 # ubuntu packages apt
-sudo apt install ripgrep gh fd-find hugo
+sudo apt install ripgrep gh fd-find
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
@@ -113,6 +113,9 @@ brew install fzf kubectl kubectx derailed/k9s/k9s starship
 
 # ubuntu brew for neovim setup
 brew install neovim go lazygit
+
+# ubuntu brew for other items
+brew install hugo
 
 # ubuntu terminal and multiplexer setup
 sudo apt install alacritty tmux
