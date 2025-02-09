@@ -37,6 +37,7 @@ export PGHREPOS="$REPOS/github.com/$PGITUSER"
 export DOTFILES="$PGHREPOS/dotfiles"
 export LAB="$PGHREPOS/homelab"
 export SCRIPTS="$DOTFILES/scripts"
+export BLOG="$PGHREPOS/bde-dev.github.io"
 export ICLOUD="$HOME/icloud"
 export ZETTELKASTEN="$HOME/Zettelkasten"
 
@@ -150,7 +151,7 @@ alias v=nvim
 alias vo='cd $REPOS/github.com/VanOord/'
 alias ..="cd .."
 alias scripts='cd $SCRIPTS'
-alias cdblog="cd ~/websites/blog"
+alias cdblog='cd $BLOG'
 alias cdpblog='cd $ZETTELKASTEN/2-areas/blog/content'
 
 # ssh
