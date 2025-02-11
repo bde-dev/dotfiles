@@ -19,6 +19,7 @@ return {
         "go",
         "bicep",
         "terraform",
+        "hcl",
         "c_sharp",
       },
       -- Disable terraform treesitter on fixture files
