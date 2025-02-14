@@ -1,0 +1,132 @@
+[Settings for obsidian]
+Description=Settings for obsidian
+desktops=8e805c84-e029-4755-8255-2a6edd80cbf4
+desktopsrule=3
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+wmclass=obsidian
+wmclassmatch=1
+
+[Window settings for firefox_firefox]
+Description=Window settings for firefox_firefox
+clientmachine=localhost
+desktops=635f86ca-9d2e-4ada-8f1b-a296fd7eec30
+desktopsrule=3
+ignoregeometry=true
+maximizehoriz=true
+maximizevert=true
+placement=6
+position=2320,1080
+positionrule=3
+size=1520,1036
+sizerule=3
+title=Mozilla Firefox
+types=1
+windowrole=browser
+windowrolematch=1
+wmclass=navigator firefox_firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[Window settings for outlook-for-linux]
+Description=Window settings for outlook-for-linux
+clientmachine=localhost
+desktops=84576993-4970-4094-b19a-05fa3b0f6ccc
+desktopsrule=3
+ignoregeometry=true
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+placement=6
+position=1920,1080
+positionrule=3
+size=400,1036
+title=Email - Brad Evans - Outlook
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=outlook-for-linux
+wmclassmatch=1
+
+[Window settings for slack]
+Description=Window settings for slack
+clientmachine=localhost
+desktops=c7a487c6-a4eb-4833-af3e-9c4eacf7913e
+desktopsrule=3
+ignoregeometry=true
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+placement=6
+position=1920,1080
+positionrule=3
+size=400,1036
+title=announcements (Channel) - Kubernetes - Slack
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=slack
+wmclassmatch=1
+
+[Window settings for systemsettings]
+Description=Window settings for systemsettings
+clientmachine=localhost
+desktops=9c54ed1c-5d17-44e5-aa8f-665a0658b6f8
+desktopsrule=3
+ignoregeometry=true
+ignoregeometryrule=3
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+title=Autostart — System Settings
+types=1
+wmclass=systemsettings
+wmclassmatch=1
+
+[Window settings for teams-for-linux]
+Description=Window settings for teams-for-linux
+clientmachine=localhost
+desktops=6e35fa20-2899-4808-bf8f-b40f91b8ee91
+desktopsrule=3
+ignoregeometry=true
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+placement=6
+position=1920,1080
+positionrule=3
+size=400,1036
+title=(1) Chat | Firmware Forum | Microsoft Teams
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=teams-for-linux
+wmclassmatch=1
+
+[Window settings for todoist]
+Description=Window settings for todoist
+clientmachine=localhost
+desktops=635f86ca-9d2e-4ada-8f1b-a296fd7eec30
+desktopsrule=3
+ignoregeometry=true
+maximizehoriz=true
+maximizevert=true
+maximizevertrule=3
+placement=6
+placementrule=2
+position=1920,1080
+positionrule=3
+size=400,1036
+sizerule=3
+title=Inbox
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=todoist
+wmclassmatch=1

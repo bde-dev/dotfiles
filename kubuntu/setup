@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Append kwin rules to kwin config
+
+cat kwinrules.kwinrule >> ~/.config/kwinrulesrc
