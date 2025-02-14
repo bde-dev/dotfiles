@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This script is designed to be physically portable
+# It will live on my USB
+# When I start work on a new bare-metal host I can run this script to init my dotfiles
+
+DOTFILES_DIR=$HOME/dev/repos/github.com/bde-dev
+mkdir -p $DOTFILES_DIR
+cd $DOTFILES_DIR
+git clone https://github.com/bde-dev/dotfiles.git
+cd dotfiles
+./setup
+
+# Optionally descend into "tools" and install common CLI programs.
+# cd tools
+# ./setup
