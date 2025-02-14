@@ -79,8 +79,6 @@ ln -sf "$PWD/bash/.bash_profile" "$HOME"/.bash_profile
 ln -sf "$PWD/bash/.bashrc" "$HOME"/.bashrc
 
 # Zettelkasten
-# This one's a little tricky on MacOS because the path contains a space. It needs to be stored as an array,
-# and when called it needs to be quoted.
 export ZETTELKASTEN=~/dev/Notes-vault
 ln -sf "$ZETTELKASTEN" ~/Zettelkasten
 
@@ -94,7 +92,6 @@ cat ~/.bashrc
 source ~/.bashrc
 
 # get the font out of the way first, it's the most annoying
-
 # For ubuntu
 mkdir -p $HOME/.local/share/fonts
 cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
@@ -109,22 +106,13 @@ sudo apt install ripgrep gh fd-find
 sudo apt install gcc g++ unzip
 
 # ubuntu brew for vim and neovim setup
-brew install fzf kubectl kubectx derailed/k9s/k9s starship
+brew install fzf starship
 
 # ubuntu brew for neovim setup
 brew install neovim go lazygit
 
-# ubuntu brew for other items
-brew install hugo
-
 # ubuntu terminal and multiplexer setup
 sudo apt install alacritty tmux
-
-# python
-sudo apt install python3-venv pip
-curl https://pyenv.run | bash
-pyenv install 3.11.11 # required for nginx-language-server
-pyenv global 3.11.11
 
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.

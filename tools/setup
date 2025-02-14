@@ -9,12 +9,10 @@ pyenv install 3.11.11 # required for nginx-language-server
 pyenv global 3.11.11
 
 # Blog
-sudo apt install hugo
+brew install hugo
 
 # Kubernetes tools
-brew install fluxcd/tap/flux
-brew install siderolabs/tap/talosctl
-brew install cilium-cli
+brew install kubectl kubectlx derailed/k9s/k9s fluxcd/tap/flux siderolabs/tap/talosctl cilium-cli
 curl -sSfL \
   https://github.com/EnterpriseDB/kubectl-cnp/raw/main/install.sh |
   sudo sh -s -- -b /usr/local/bin
