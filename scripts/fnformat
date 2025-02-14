@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Capture directory, use '.' if none specified
+DIR="${1:-.}"
+
+# Function to collect files in directory
+collect_files() {
+  local dir="$1"
+
+  # Remove trailing slashes
+  dir="${dir%/}"
+
+  # Loop through all files and folders in current directory
+  for file in "$dir"/*; do
+    # Skip if it does not exist
+    [ -e "$file" ] || continue
+
+    # If it is a directory, drop down into it
+    if [[ -d "$file" ]]; then
+      collect_files "$file"
+      continue
+    fi
+
+    # Create new filename: replace " " with "-" and convert to lowercase
+    new_name=$(echo "$(basename "$file")" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+    new_path="$(dirname "$file")/$new_name"
+
+    # Set new filename if it's different from current file name
+    if [[ "$file" != "$new_path" ]]; then
+      files_to_rename+=("$file -> $new_path")
+      rename_map["$file"]="$new_path"
+    fi
+  done
+}
+
+rename_files() {
+  for file in "${!rename_map[@]}"; do
+    mv "$file" "${rename_map[$file]}"
+    echo "Renamed file: $file -> $new_path"
+  done
+}
+
+declare -a files_to_rename
+declare -A rename_map
+
+# Collect files that need renaming
+collect_files $DIR
+
+# Display files that need renaming
+if [[ ${#files_to_rename[@]} -gt 0 ]]; then
+  echo "The following files can be renamed:"
+  printf '%s\n' "${files_to_rename[@]}"
+  read -p "Proceed with renaming? (y/n) :" confirm
+  if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
+    rename_files
+  else
+    echo "Aborted renaming."
+    exit 1
+  fi
+else
+  echo "No files to rename."
+fi
