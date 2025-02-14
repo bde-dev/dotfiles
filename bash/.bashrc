@@ -153,6 +153,7 @@ alias ..="cd .."
 alias scripts='cd $SCRIPTS'
 alias cdblog='cd $BLOG'
 alias cdpblog='cd $ZETTELKASTEN/2-areas/blog/content'
+alias testblog='cd $BLOG && hugo server'
 
 # ssh
 alias sshc='v $HOME/.ssh/config'
