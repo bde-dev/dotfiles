@@ -2,28 +2,23 @@
 
 My configuration files for bash, vim, tmux and so forth.
 
-For a full walkthrough of these config files + more, check out [my Skool community.](https://mischavandenburg.com/skool)
-
-<https://mischavandenburg.com/skool>
-
-## Shell
-
-I went back to Zsh.
-
-No oh-my-zsh.
-
 ## Setup Notes
 
-The intention is to be able to run a setup script after cloning the repo on a Mac or Ubuntu (WSL) system and be up and running very quickly.
+The intention is to be able to run a setup script after cloning the repo on an Ubuntu system and be up and running very quickly.
 
 ### Ubuntu
-
 ```bash
-DOTFILES_DIR=$HOME/Repos/github.com/mischavandenburg
+
+DOTFILES_DIR=$HOME/dev/repos/github.com/bde-dev
 mkdir -p $DOTFILES_DIR
 cd $DOTFILES_DIR
-git clone https://github.com/mischavandenburg/dotfiles.git
+git clone https://github.com/bde-dev/dotfiles.git
 cd dotfiles
+./setup
+
+# Optionally descend into "tools" and install common CLI programs.
+cd tools
+./setup
 ```
 
 ### Windows and WSL setup
