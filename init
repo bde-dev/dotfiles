@@ -9,7 +9,7 @@ mkdir -p $DOTFILES_DIR
 cd $DOTFILES_DIR
 git clone https://github.com/bde-dev/dotfiles.git
 cd dotfiles
-./setup
+# ./setup
 
 # Optionally descend into "tools" and install common CLI programs.
 # cd tools
