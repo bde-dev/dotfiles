@@ -125,7 +125,7 @@ Host ansible
 	User tcs
 
 Host argo
-	HostName 192.168.252.73
+	HostName 172.16.82.10
 	User tcs
 
 Host rancher
