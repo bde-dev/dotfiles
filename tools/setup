@@ -2,8 +2,11 @@
 
 # Script to install common tools and applications
 
+# Diagnostics
+sudo apt install -y btop
+
 # python
-sudo apt install python3-venv pip
+# sudo apt install python3-venv pip  ~# might not need this?
 curl https://pyenv.run | bash
 pyenv install 3.11.11 # required for nginx-language-server
 pyenv global 3.11.11
