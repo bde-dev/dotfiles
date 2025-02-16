@@ -7,8 +7,8 @@ My configuration files for bash, vim, tmux and so forth.
 The intention is to be able to run a setup script after cloning the repo on an Ubuntu system and be up and running very quickly.
 
 ### Ubuntu
-```bash
 
+```bash
 DOTFILES_DIR=$HOME/dev/repos/github.com/bde-dev
 mkdir -p $DOTFILES_DIR
 cd $DOTFILES_DIR
