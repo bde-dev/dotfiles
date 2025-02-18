@@ -196,6 +196,21 @@ Host q2-observability-table
 	HostName 172.16.81.40
 	User tcs
 
+Host q2-macau-server
+  Hostname 192.168.190.149
+  User tcs
+
+Host q2-macau-table
+  HostName 192.168.190.127
+  User tcs
+
+Host q2-macau-term1
+  HostName 192.168.190.221
+  User quixant
+
+Host q2-macau-term2
+  HostName 192.168.190.222
+  User quixant
 
 
 ##################################
