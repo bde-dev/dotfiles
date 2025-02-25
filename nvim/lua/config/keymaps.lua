@@ -13,16 +13,13 @@ vim.keymap.set(
 -- map esc to jk for laptop use
 -- vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape jk" })
 
--- insert the date in my desired configuration
+-- insert the date / time in my desired configuration
 vim.keymap.set("n", "<leader>d", "<cmd>r!gendate<cr>", { desc = "Insert date" })
 vim.keymap.set("n", "<leader>h1", "<cmd>r!gendate h 1<cr>", { desc = "Insert date h1" })
 vim.keymap.set("n", "<leader>h2", "<cmd>r!gendate h 2<cr>", { desc = "Insert date h2" })
-
--- insert timestamp at cursor
-vim.keymap.set("n", "<leader>ts", function()
-  local time = os.date("%H:%M")
-  vim.api.nvim_put({ time }, "c", true, true)
-end, { desc = "Insert timestamp HH:MM at cursor" })
+vim.keymap.set("n", "<leader>t1", "<cmd>r!gentime h 1<cr>", { desc = "Insert time h1" })
+vim.keymap.set("n", "<leader>t2", "<cmd>r!gentime h 2<cr>", { desc = "Insert time h2" })
+vim.keymap.set("n", "<leader>t3", "<cmd>r!gentime h 3<cr>", { desc = "Insert time h3" })
 
 -- lsp
 vim.keymap.set("n", "<leader>S", "<cmd>LspStop<CR>", { desc = "LspStop" })
