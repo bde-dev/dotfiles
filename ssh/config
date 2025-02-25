@@ -110,7 +110,7 @@ Host postgres4
 	User tcs
 
 Host swarmtests
-	HostName 192.168.252.66
+	HostName 172.16.100.66
 	User tcs
 
 Host messaging-server
@@ -125,7 +125,7 @@ Host ansible
 	User tcs
 
 Host argo
-	HostName 172.16.82.10
+	HostName 172.16.80.105
 	User tcs
 
 Host rancher
@@ -371,4 +371,10 @@ Host barc-q2-roulette-podium
 
 Host barc-q2-sparetable02
 	HostName 192.168.252.212
+	User tcs
+
+
+
+Host tableswin
+	HostName 192.168.252.152
 	User tcs
