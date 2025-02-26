@@ -231,3 +231,7 @@ eval "$(direnv hook zsh)"
 
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/home/brad/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
