@@ -7,11 +7,13 @@ local function create_and_open_zk_note()
 
   if title then
     -- Construct and execute the zk command
-    local cmd = string.format('zk new --vim "%s"', title)
-    local output = vim.fn.system(cmd)
+    local cmd = string.format('zet "%s" --no-open', title)
+    vim.fn.system(cmd)
 
     -- Extract the file path from the output and clean it
-    local file_path = output:match("New note created: (.+)")
+    local zettelkasten_dir = vim.fn.expand("$ZETTELKASTEN")
+    print(zettelkasten_dir)
+    local file_path = zettelkasten_dir .. "/05-inbox/" .. title .. ".md"
     if file_path then
       -- Remove null bytes, newlines, and trim whitespace
       file_path = file_path:gsub("%z", ""):gsub("\n", ""):gsub("^%s*(.-)%s*$", "%1")
@@ -27,7 +29,6 @@ local function create_and_open_zk_note()
       print("File path: " .. file_path) -- Debug print
     else
       print("Failed to create note: " .. title)
-      print("Command output: " .. output)
     end
   else
     print("No title found between double square brackets")

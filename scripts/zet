@@ -1,44 +1,69 @@
 #!/bin/bash
 
-# function to prompt the user for a filename
+# Function to prompt the user for a filename
 get_filename() {
   read -p "Enter a filename: " filename
   echo "$filename"
 }
 
-# function to create and open a file in the specified directory
-open_file() {
+# Function to create a file in the specified directory
+create_file() {
+  local dir="$1"
+  local filename="$2"
+  local filepath="$dir/$filename.md"
 
-  # Cd into the directory
-  cd "$1" || exit
-  # Create the file in the specified directory
-  touch "$1/$filename.md"
+  # Change into the directory
+  cd "$dir" || exit 1
 
-  # format the file
+  # Create the file
+  touch "$filepath"
+
+  # Format the file
   {
     echo "# "
     echo -en "\n"
-  } >>"$1/$filename.md"
+  } >>"$filepath"
 
-  # Open the file in Neovim
-  nvim '+ normal ggzzi' "$1/$filename.md" -c :NoNeckPain
+  echo "$filepath" # Output the file path for external use
 }
 
+# Default values
+OPEN_FILE=true
+TARGET_DIR="$ZETTELKASTEN/05-inbox"
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --no-open)
+    OPEN_FILE=false
+    shift
+    ;;
+  -*)
+    echo "Unknown option: $1"
+    exit 1
+    ;;
+  *)
+    filename="$1"
+    shift
+    ;;
+  esac
+done
+
 # Prompt the user if no filename is provided
-if [[ $# -eq 0 ]]; then
+if [[ -z "$filename" ]]; then
   filename=$(get_filename)
 fi
 
-# if more than one argument is given, print error message and stop script
-if [[ $# -gt 1 ]]; then
-  echo "Please provide only one filename separated by dashes, without .md extension."
-  echo "Example: zet my-new-note"
+# Validate filename
+if [[ -z "$filename" ]]; then
+  echo "Filename cannot be empty."
   exit 1
 fi
 
-# set filename to the argument given to the script
-if [[ $# -eq 1 ]]; then
-  filename=$1
-fi
+# Create the file
+filepath=$(create_file "$TARGET_DIR" "$filename")
 
-open_file "$ZETTELKASTEN/05-inbox"
+# Open the file in Neovim unless --no-open was specified
+if $OPEN_FILE; then
+  nvim '+ normal ggzzi' "$filepath" -c :NoNeckPain
+fi
