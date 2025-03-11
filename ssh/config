@@ -43,30 +43,69 @@ Host bitbucket.org
 
 # Proxmox
 
-Host global-storage
-	HostName 192.168.252.240
+Host proxmox-innos-data
+	HostName 172.16.80.10
 	User root
 
-Host innos-proxmox-node01
+Host proxmox-innos-node01
 	HostName 172.16.80.11
 	User root
 
-Host innos-proxmox-node02
+Host proxmox-innos-node02
 	HostName 172.16.80.12
 	User root
 	
-Host innos-proxmox-node03
+Host proxmox-innos-node03
 	HostName 172.16.80.13
 	User root
 
-Host innos-proxmox-node04
+Host proxmox-innos-node04
 	HostName 172.16.80.14
 	User root
 
-Host innos-proxmox-node05
+Host proxmox-innos-node05
 	HostName 172.16.80.15
 	User root
 
+Host proxmox-rd-data
+	HostName 172.16.69.10
+	User root
+
+Host proxmox-rd-node01
+	HostName 172.16.69.21
+	User root
+
+Host proxmox-rd-node02
+	HostName 172.16.69.22
+	User root
+	
+Host proxmox-rd-node03
+	HostName 172.16.69.23
+	User root
+
+Host proxmox-rd-node04
+	HostName 172.16.69.24
+	User root
+
+Host proxmox-rd-node05
+	HostName 172.16.69.25
+	User root
+
+Host proxmox-rd-node06
+	HostName 172.16.69.26
+	User root
+
+Host nginx01
+  Hostname 172.16.100.91
+  User tcs
+
+Host nginx02
+  Hostname 172.16.100.92
+  User tcs
+
+Host nginx03
+  Hostname 172.16.100.93
+  User tcs
 
 # Show kit
 
@@ -87,7 +126,7 @@ Host jenkins
 	User tcs
 
 Host wazuh
-	HostName 172.16.6.41
+	HostName 172.16.100.80
 	User tcs
 	
 
@@ -152,7 +191,7 @@ Host telemetry-server
 ##################################
 
 Host q2-innos-server
-	HostName 192.168.252.173
+	HostName 172.16.80.50
 	User tcs
 
 Host q2-parimax-server
@@ -160,7 +199,7 @@ Host q2-parimax-server
 	User tcs
 
 Host q2-innos-term1
-	HostName 192.168.252.92
+	HostName 172.16.81.33
 	User quixant
 
 Host q2-innos-rnghost
@@ -180,7 +219,11 @@ Host q2-showroom-server
 	User tcs
 
 
-Host q2-telemetry-server
+Host q2-observability-server02
+	HostName 172.16.81.11
+	User tcs
+
+Host q2-observability-server01
 	HostName 172.16.81.10
 	User tcs
 
