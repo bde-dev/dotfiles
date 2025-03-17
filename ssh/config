@@ -109,15 +109,21 @@ Host nginx03
 
 # Show kit
 
-Host show-storage
+Host jac-storage
 	HostName 192.168.252.165
 	User tcs
 
-Host show-server01
+Host jac-proxmox01
 	HostName 192.168.252.160
 	User tcs
 
+Host jac-proxmox02
+	HostName 192.168.252.161
+	User tcs
 
+Host jac-proxmox03
+  HostName 192.168.252.162
+  User tcs
 
 # CI/CD
 
@@ -259,12 +265,10 @@ Host q2-macau-term2
 ##################################
 ############### GFL ##############
 ##################################
-	
-Host showroom
+
+Host gfl-showroom
 	HostName 192.168.252.1
 	User tcs
-
-
 
 Host venetian-appserver
 	HostName 172.16.85.100
@@ -282,7 +286,6 @@ Host venetian-dbreplication02
 	HostName 172.16.85.103
 	User tcs
 
-	
 Host canada1
 	HostName 192.168.252.55
 	User tcs
@@ -305,7 +308,9 @@ Host canada-table
 	KexAlgorithms +diffie-hellman-group1-sha1
 	User root
 	
-
+Host melco
+  Hostname 172.16.53.101
+  User tcs
 
 
 ##################################
@@ -365,55 +370,55 @@ Host us-term3
 	User quixant
 
 ##################################
-########## BARCELONA Q2 ##########
+############ SHOW Q2 #############
 ##################################
 
-Host barc-q2-server
-	HostName 192.168.252.200
+Host show-q2-server
+	HostName 192.168.252.195
 	User tcs
 
-Host barc-q2-roulette-xtra
+Host show-q2-roulette-xtra
 	HostName 192.168.252.201
 	User tcs
 
-Host barc-q2-roulette-highend
+Host show-q2-roulette-highend
 	HostName 192.168.252.202
 	User tcs
 
-Host barc-q2-baccarat
+Host show-q2-baccarat
 	HostName 192.168.252.203
-	User tcs
-	
-Host barc-q2-terminal01
+  User tcs
+
+Host show-q2-terminal01
 	HostName 192.168.252.204
 	User quixant
 
-Host barc-q2-terminal02
+Host show-q2-terminal02
 	HostName 192.168.252.205
 	User quixant
 
-Host barc-q2-terminal03
+Host show-q2-terminal03
 	HostName 192.168.252.206
 	User quixant
 
-Host barc-q2-terminal04
+Host show-q2-terminal04
 	HostName 192.168.252.207
 	User quixant
 
-Host barc-q2-terminal05
+Host show-q2-terminal05
 	HostName 192.168.252.208
 	User quixant
 
-Host barc-q2-terminal06
+Host show-q2-terminal06
 	HostName 192.168.252.209
 	User quixant
 
-Host barc-q2-roulette-podium
+Host show-q2-roulette-podium
 	HostName 192.168.252.211
 	User tcs
 
-Host barc-q2-sparetable02
-	HostName 192.168.252.212
+Host show-q2-rng
+	HostName 192.168.252.193
 	User tcs
 
 
