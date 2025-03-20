@@ -2,18 +2,19 @@
 
 # Stuff needs fleshing out
 # 1. Argument and paremeter validation
+# 2. Admin user switch
 
 REMOTE_HOST="$1"
 REMOTE_USER="$2"
-AUTH_KEYS_PATH="C:\ProgramData\ssh\administrators_authorized_keys"
+ADMIN_AUTH_KEYS_PATH="C:\ProgramData\ssh\administrators_authorized_keys"
  
 echo "Inline vars:"
 echo "Remote Host: $REMOTE_HOST"
 echo "Remote User: $REMOTE_USER"
-echo "Remote administrators_authorized_keys path: $AUTH_KEYS_PATH"
+echo "Remote authorized_keys path: $ADMIN_AUTH_KEYS_PATH"
  
 PUB_KEY="$(cat ~/.ssh/id_ecdsa.pub)"
  
 echo "Captured id_ecdsa.pub: $PUB_KEY"
  
-sshpass -p 'tcsjh' ssh $REMOTE_USER@$REMOTE_HOST "echo $PUB_KEY > $AUTH_KEYS_PATH"
+sshpass -p 'tcsjh' ssh $REMOTE_USER@$REMOTE_HOST "echo $PUB_KEY > $ADMIN_AUTH_KEYS_PATH"
