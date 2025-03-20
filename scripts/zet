@@ -22,12 +22,24 @@ create_file() {
   {
     echo "# "
     echo -en "\n"
+    echo "[[$today]]"
+    echo -en "\n"
+    echo -en "\n"
+    echo -en "\n"
   } >>"$filepath"
 
   echo "$filepath" # Output the file path for external use
 }
 
+append_to_daily_note() {
+  local wikilink="[[$filename]]" # wikilink of new zet file
+
+  echo "$wikilink" >>"$daily_note" # Append new zet file wikilink to today's daily note
+}
+
 # Default values
+today="$(gendate)"
+daily_note="$ZETTELKASTEN/daily-notes/$today.md"
 OPEN_FILE=true
 TARGET_DIR="$ZETTELKASTEN/05-inbox"
 
@@ -62,6 +74,8 @@ fi
 
 # Create the file
 filepath=$(create_file "$TARGET_DIR" "$filename")
+
+append_to_daily_note
 
 # Open the file in Neovim unless --no-open was specified
 if $OPEN_FILE; then
