@@ -72,12 +72,17 @@ if [[ -z "$filename" ]]; then
   exit 1
 fi
 
-# Create the file
-filepath=$(create_file "$TARGET_DIR" "$filename")
+TARGET_PATH="$TARGET_DIR/$filename.md"
 
-append_to_daily_note
+# Check if file already exists
+if [[ ! -f "$TARGET_PATH" ]]; then
+  create_file "$TARGET_DIR" "$filename"
+  append_to_daily_note
+else
+  echo "File already exists - not creating new zet note."
+fi
 
 # Open the file in Neovim unless --no-open was specified
 if $OPEN_FILE; then
-  nvim '+ normal ggzz' -c "startinsert!" "$filepath" -c :NoNeckPain
+  nvim '+ normal ggzz' -c "startinsert!" "$TARGET_PATH" -c :NoNeckPain
 fi
