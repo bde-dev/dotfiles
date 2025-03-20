@@ -248,7 +248,7 @@ alias sbr='source ~/.bashrc'
 alias s='startx'
 
 # vim & second brain
-alias in="cd \$ZETTELKASTEN/0 Inbox/"
+alias in="cd \$ZETTELKASTEN/05-inbox/"
 alias zk="cd \$ZETTELKASTEN"
 
 # starting programmes
