@@ -65,5 +65,5 @@ filepath=$(create_file "$TARGET_DIR" "$filename")
 
 # Open the file in Neovim unless --no-open was specified
 if $OPEN_FILE; then
-  nvim '+ normal ggzzi' "$filepath" -c :NoNeckPain
+  nvim '+ normal ggzz' -c "startinsert!" "$filepath" -c :NoNeckPain
 fi
