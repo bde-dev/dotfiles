@@ -46,9 +46,10 @@ export TCSGITUSER="bd-evans"
 export TCSGHREPOS="$REPOS/github.com/$TCSGITUSER"
 export TCSBBREPOS="$REPOS/bitbucket.org/$TCSGITUSER"
 export Q2="$TCSBBREPOS/qorex2"
-export TCSCOMMS="$TCSBBREPOS/tcscomms"
+export TCSCOMMS="$TCSBBREPOS/tcs.comms"
 export DDS="$TCSGHREPOS/WinningNumberDisplay"
 export RLX="$TCSGHREPOS/RouletteXtra"
+export TORBS="$TCSBBREPOS/tcsjh-circleci-orbs"
 
 # Go related. In general all executables and scripts go in .local/bin
 export GOBIN="$HOME/.local/bin"
@@ -185,6 +186,7 @@ alias q2d='cd $Q2/Docker'
 alias tcscomms='cd $TCSCOMMS'
 alias dds='cd $DDS'
 alias rlx='cd $RLX'
+alias torbs='cd $TORBS'
 
 alias c="clear"
 alias icloud="cd \$ICLOUD"
