@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wakeonlan 4C:ED:FB:77:93:3C
