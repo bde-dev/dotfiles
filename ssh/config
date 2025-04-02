@@ -191,6 +191,14 @@ Host telemetry-server
 	HostName 172.16.81.1
 	User tcs
 
+# Legacy
+Host file-server
+  HostName 172.16.240.1
+  User tcs
+
+Host registry
+  HostName 172.16.254.100
+  User tcs
 
 ##################################
 ############### Q2 ###############
