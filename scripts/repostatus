@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# repostatus
+# Scan all repos in ~/dev/repos and display their status
+
+base_dir=~/dev/repos
+
+find "$base_dir" -type d -name ".git" | while read -r git_dir; do
+  repo_dir="${git_dir%/.git}"
+  changes=$(git -C "$repo_dir" status --short)
+
+  if [[ -n "$changes" ]]; then
+    echo -e "\n--- $repo_dir ---"
+    echo "$changes"
+  fi
+done
