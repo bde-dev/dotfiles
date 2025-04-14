@@ -28,6 +28,7 @@ export BROWSER="google-chrome"
 # directories
 # common
 export REPOS="$HOME/dev/repos"
+export NEEDREPO="$REPOS/need-repo"
 export GHREPOS="$REPOS/github.com"
 export BBREPOS="$REPOS/bitbucket.org"
 
@@ -162,6 +163,7 @@ alias sshc='v $HOME/.ssh/config'
 # Repos
 # common
 alias repos='cd $REPOS'
+alias needrepo='cd $NEEDREPO'
 alias ghrepos='cd $GHREPOS'
 alias bbrepos='cd $BBREPOS'
 
