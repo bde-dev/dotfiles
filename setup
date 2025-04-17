@@ -97,10 +97,14 @@ sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt install ripgrep gh fd-find curl build-essential -y
 
 # ubuntu apt neovim setup
-sudo apt install gcc g++ unzip npm -y
+sudo apt install gcc g++ unzip -y
 
 # ubuntu terminal and multiplexer setup
 sudo apt install alacritty tmux -y
+
+# Install Node Version Manager and latest Node.js LTS
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+nvm install --lts
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
