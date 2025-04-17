@@ -81,10 +81,6 @@ export ZETTELKASTEN=~/dev/Notes-vault
 ln -sf "$ZETTELKASTEN" ~/Zettelkasten
 
 # Packages
-
-# install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Show dotfiles bashrc and source it into script context
 cat ~/.bashrc
 source ~/.bashrc
@@ -98,19 +94,23 @@ cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 sudo add-apt-repository ppa:aslatter/ppa -y
 
 # ubuntu packages apt
-sudo apt install ripgrep gh fd-find -y
+sudo apt install ripgrep gh fd-find curl build-essential -y
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip npm -y
+
+# ubuntu terminal and multiplexer setup
+sudo apt install alacritty tmux -y
+
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # ubuntu brew for vim and neovim setup
 brew install fzf starship
 
 # ubuntu brew for neovim setup
 brew install neovim go lazygit
-
-# ubuntu terminal and multiplexer setup
-sudo apt install alacritty tmux -y
 
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.
