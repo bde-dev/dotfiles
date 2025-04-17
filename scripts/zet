@@ -43,6 +43,12 @@ daily_note="$ZETTELKASTEN/daily-notes/$today.md"
 OPEN_FILE=true
 TARGET_DIR="$ZETTELKASTEN/05-inbox"
 
+# Check daily note exists
+if [[ ! -f "$daily_note" ]]; then
+  echo "daily not does not exist - creating"
+  day_bash --no-open
+fi
+
 # Parse arguments
 while [[ $# -gt 0 ]]; do
   case "$1" in

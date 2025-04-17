@@ -25,12 +25,31 @@ EOF
 
 }
 
+# Default values
+OPEN_FILE=true
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --no-open)
+    OPEN_FILE=false
+    shift
+    ;;
+  -*)
+    echo "Unknown option: $1"
+    exit 1
+    ;;
+  esac
+done
+
 # If the daily note does not exist, create a new one.
 # this uses the test command with the -f flag.
 if [ ! -f "$file" ]; then
   echo "File does not exist, creating new daily note."
-  new_note
+  new_note --no-open
 fi
 
 # Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
-nvim '+ normal Gzzo' "$file" -c :NoNeckPain
+if $OPEN_FILE; then
+  nvim '+ normal Gzzo' "$file" -c :NoNeckPain
+fi
