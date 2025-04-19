@@ -102,6 +102,10 @@ sudo apt install gcc g++ unzip -y
 # ubuntu terminal and multiplexer setup
 sudo apt install alacritty tmux -y
 
+# Download alacritty themes
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
 # Install Node Version Manager and latest Node.js LTS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 nvm install --lts
