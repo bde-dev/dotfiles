@@ -37,6 +37,7 @@ common_directories=(
   "$XDG_CONFIG_HOME/qutebrowser"
   "$XDG_CONFIG_HOME/waybar"
   "$XDG_CONFIG_HOME/hypr"
+  "$HOME/.ssh"
 )
 
 common_items=(
