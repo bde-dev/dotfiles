@@ -7,7 +7,7 @@ fi
 
 # Only run these on Ubuntu and Fedora
 
-if [[ $(grep -E "^(ID|NAME)=" /etc/os-release | grep -Eq "ubuntu|fedora")$? == 0 ]]; then
+if [[ $(grep -E "^(ID|NAME)=" /etc/os-release | grep -Eqi "ubuntu|fedora|pop")$? == 0 ]]; then
   # needed for brew to work
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
