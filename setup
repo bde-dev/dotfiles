@@ -109,6 +109,8 @@ git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/theme
 
 # Install Node Version Manager and latest Node.js LTS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install --lts
 
 # install brew
