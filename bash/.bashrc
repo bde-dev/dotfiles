@@ -48,7 +48,8 @@ export TCSGHREPOS="$REPOS/github.com/$TCSGITUSER"
 export TCSBBREPOS="$REPOS/bitbucket.org/$TCSGITUSER"
 export Q2="$TCSBBREPOS/qorex2"
 export TCSCOMMS="$TCSBBREPOS/TCS.Comms"
-export DDS="$TCSGHREPOS/WinningNumberDisplay"
+export DDSR="$TCSGHREPOS/WinningNumberDisplay"
+export DDSB="$TCSBBREPOS/dds-baccarat"
 export RLX="$TCSGHREPOS/RouletteXtra"
 export TORBS="$TCSBBREPOS/tcsjh-circleci-orbs"
 
@@ -186,7 +187,8 @@ alias tbb='cd $TCSBBREPOS'
 alias q2='cd $Q2'
 alias q2d='cd $Q2/Docker'
 alias tcscomms='cd $TCSCOMMS'
-alias dds='cd $DDS'
+alias ddsr='cd $DDSR'
+alias ddsb='cd $DDSB'
 alias rlx='cd $RLX'
 alias torbs='cd $TORBS'
 
