@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Script to open the current quarterly note.
+# Creates it if it does not exist.
+# Takes a '--no-open' parameter to not open the file.
+
+# Default values
+OPEN_FILE=true
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --no-open)
+    OPEN_FILE=false
+    shift
+    ;;
+  -*)
+    echo "Unknown option: $1"
+    exit 1
+    ;;
+  esac
+done
+
+# Get the current year
+year=$(date +%Y)
+
+# Get the current month as a number (01–12)
+month=$(date +%m)
+
+# Determine the quarter
+if ((month >= 1 && month <= 3)); then
+  quarter="Q1"
+elif ((month >= 4 && month <= 6)); then
+  quarter="Q2"
+elif ((month >= 7 && month <= 9)); then
+  quarter="Q3"
+else
+  quarter="Q4"
+fi
+
+echo "Current quarter: $quarter"
+echo "Current year: $year"
+
+filename="$year-$quarter.md"
+echo "Current quarterly note filename: $filename"
+
+file="$ZETTELKASTEN/quarterly-notes/$filename"
+echo "Current quarterly note path: $file"
+
+# If the quarterly note does not exist, create it
+if [ ! -f "$file" ]; then
+  echo "file does not exist, creating..."
+  touch $file
+fi
+
+# Open the quarterly note at the bottom of the file in insert mode and run NoNeckPain to make it center
+if $OPEN_FILE; then
+  nvim '+ normal Gzzo' "$file" -c :NoNeckPain
+fi
