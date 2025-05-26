@@ -91,6 +91,8 @@ source ~/.bashrc
 mkdir -p $HOME/.local/share/fonts
 cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 
+sudo apt update
+
 # ubuntu PPA repositories
 sudo add-apt-repository ppa:aslatter/ppa -y
 
