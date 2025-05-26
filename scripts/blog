@@ -106,11 +106,6 @@ test)
   hugo server
   ;;
 
-"")
-  # Change to the blog directory if no argument was given
-  cd "$BLOG" || exit
-  ;;
-
 *)
   # Print an error message if the parameter was not "post", "convert" or "test"
   echo "Error: Invalid parameter. Usage: blog post|convert|test"
