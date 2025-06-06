@@ -26,6 +26,26 @@
 ########### SSH KEYS #############
 ##################################
 
+# DevPod Start gitdesk.devpod
+Host gitdesk.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode gitdesk
+  User vscode
+# DevPod End gitdesk.devpod
+# DevPod Start dotnet-lab.devpod
+Host dotnet-lab.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode dotnet-lab
+  User vscode
+# DevPod End dotnet-lab.devpod
 Host github.com
   HostName github.com
   User git
@@ -207,6 +227,7 @@ Host registry
 Host q2-innos-server
 	HostName 172.16.80.50
 	User tcs
+  StrictHostKeyChecking no
 
 Host q2-parimax-server
 	HostName 192.168.252.182
