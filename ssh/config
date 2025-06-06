@@ -354,6 +354,14 @@ Host tiblan
     MACs +hmac-sha1
 	User root
 	
+# For going into a LAN port on the TIB
+Host tib2lan
+	HostName 192.168.2.1
+	KexAlgorithms +diffie-hellman-group1-sha1
+	HostKeyAlgorithms +ssh-rsa
+    MACs +hmac-sha1
+	User root
+
 # Generic TIB and server host names
 # Change these IP's for easier access
 Host tib
