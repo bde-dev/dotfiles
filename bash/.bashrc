@@ -4,10 +4,12 @@
 
 # ~~~~~~~~ Bash Profiling ~~~~~~~~~~
 
-#PS4='+ $EPOCHREALTIME\011 '
-#timestamp=$(date +"%Y%m%d_%H%M%S")
-#exec 3>&2 2>/tmp/bashstart_${timestamp}_$$.log
-#set -x
+PS4='+ $EPOCHREALTIME\011 '
+START_TIME=$EPOCHREALTIME
+echo ".bashrc started at: $START_TIME"
+timestamp=$(date +"%Y%m%d_%H%M%S")
+exec 3>&2 2>/tmp/bashstart_${timestamp}_$$.log
+set -x
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -327,13 +329,11 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # ~~~~~~~~ Profiling ~~~~~~~~~
 
-#set +x
-#exec 2>&3 3>&-
-#
-#
-#START_TIME=$EPOCHREALTIME
-#END_TIME=$EPOCHREALTIME
-#ELAPSED_MS=$(printf "%.0f" $(echo "($END_TIME - $START_TIME) * 1000" | bc))
-#
-#
-#echo "Bash startup took $ELAPSED_MS ms"
+set +x
+exec 2>&3 3>&-
+
+END_TIME=$EPOCHREALTIME
+echo ".bashrc finished at: $END_TIME"
+ELAPSED_MS=$(printf "%.0f" $(echo "($END_TIME - $START_TIME) * 1000" | bc))
+
+echo "Bash startup took $ELAPSED_MS ms"
