@@ -144,8 +144,6 @@ fi
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Moved to starship 20-03-2024 for all my prompt needs.
-
 eval "$(starship init bash)"
 
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,7 +221,6 @@ alias e='exit'
 alias syu='sudo pacman -Syu'
 
 # Azure
-
 alias sub='az account set -s'
 
 # dotnet
@@ -319,13 +316,12 @@ else
   eval "$(fzf --bash)"
 fi
 
+# Mise-en-place
+eval "$(mise activate bash)"
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/brad/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # ~~~~~~~~ Profiling ~~~~~~~~~
 

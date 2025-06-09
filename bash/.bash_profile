@@ -18,11 +18,6 @@ fi
 
 export XDG_CONFIG_HOME="$HOME"/.config
 
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/brad/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

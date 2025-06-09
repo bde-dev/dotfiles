@@ -42,6 +42,7 @@ common_directories=(
 
 common_items=(
   "alacritty.toml:$XDG_CONFIG_HOME/alacritty/alacritty.toml"
+  "mise.toml:$XDG_CONFIG_HOME/mise.toml"
   "k9s/skin.yml:$XDG_CONFIG_HOME/k9s/skin.yml"
   ".inputrc:$HOME/.inputrc"
   ".tmux.conf:$HOME/.tmux.conf"
