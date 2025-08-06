@@ -25,7 +25,8 @@ done
 year=$(date +%Y)
 
 # Get the current month as a number (01–12)
-month=$(date +%m)
+month=$(date +%m | sed 's/^0//')
+echo "Current Month: $month"
 
 # Determine the quarter
 if ((month >= 1 && month <= 3)); then
