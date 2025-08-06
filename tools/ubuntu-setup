@@ -28,7 +28,7 @@ sudo apt update && sudo apt upgrade -y
 
 
 # apt
-sudo apt install network-manager-strongswan snapd ca-certificates displaylink-driver docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin dotnet-sdk-8.0 git git-lfs -y
+sudo apt install network-manager-strongswan libcharon-extra-plugins snapd ca-certificates displaylink-driver docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin dotnet-sdk-8.0 git git-lfs -y
 
 
 # dpkg
