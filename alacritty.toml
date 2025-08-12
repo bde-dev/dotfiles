@@ -3,6 +3,8 @@ size = 17
 
 [font.normal]
 family = "UbuntuMono Nerd Font"
+#family = "Terminess Nerd Font Mono"
+#family = "JetBrains Mono Nerd Font"
 
 [window]
 decorations = "none"
