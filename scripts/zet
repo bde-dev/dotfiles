@@ -46,7 +46,7 @@ TARGET_DIR="$ZETTELKASTEN/05-inbox"
 # Check daily note exists
 if [[ ! -f "$daily_note" ]]; then
   echo "daily not does not exist - creating"
-  day_bash --no-open
+  dnote --no-open
 fi
 
 # Parse arguments
