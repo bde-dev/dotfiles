@@ -1,12 +1,35 @@
 #!/bin/bash
 
-today=$(date +"%Y-%m-%d")
-tomorrow=$(date -d "tomorrow" +"%Y-%m-%d")
-yesterday=$(date -d "yesterday" +"%Y-%m-%d")
+# Default values
+OPEN_FILE=true
+DATE=$(date +"%Y-%m-%d")
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --no-open)
+    OPEN_FILE=false
+    shift
+    ;;
+  --date)
+    DATE="$2"
+    shift 2
+    ;;
+  -*)
+    echo "Unknown option: $1"
+    exit 1
+    ;;
+  esac
+done
+
+today="$DATE"
+tomorrow=$(date -d "$DATE +1 day" +"%Y-%m-%d")
+yesterday=$(date -d "$DATE -1 day" +"%Y-%m-%d")
 file="$ZETTELKASTEN/daily-notes/$today.md"
 
 cd "$ZETTELKASTEN" || exit
 
+# Function to create new note from template
 new_note() {
   touch "$file"
 
@@ -24,23 +47,6 @@ new_note() {
 EOF
 
 }
-
-# Default values
-OPEN_FILE=true
-
-# Parse arguments
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-  --no-open)
-    OPEN_FILE=false
-    shift
-    ;;
-  -*)
-    echo "Unknown option: $1"
-    exit 1
-    ;;
-  esac
-done
 
 # If the daily note does not exist, create a new one.
 # this uses the test command with the -f flag.
